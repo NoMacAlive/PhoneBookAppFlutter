@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:practise_app/helper/util.dart';
 
 class Profile extends StatefulWidget {
   @override
@@ -52,7 +53,9 @@ class _ProfileState extends State<Profile> {
                     color: Colors.white,
                   ),
                   child: IconButton(
-                      icon: Icon(Icons.message),
+                      icon: Icon(
+                        Icons.message,
+                      ),
                       onPressed: () => _buttonPressed),
                 ),
               ],
@@ -113,43 +116,183 @@ class _ProfileState extends State<Profile> {
         SizedBox(
           height: 14,
         ),
-        Row(
-          children: [
-            Expanded(
-              child: Text('Home\n 02102413844',style: TextStyle(backgroundColor: Colors.blue),)
-            )
-   ],
-          mainAxisAlignment:
-              MainAxisAlignment.center, //Center Row contents horizontally,
-          crossAxisAlignment:
-              CrossAxisAlignment.center, //Center Row contents vertically,
-        ), //phone number
+        Container(
+          padding: const EdgeInsets.only(left: 35, top: 12, bottom: 12),
+          margin: EdgeInsets.only(left: 30, right: 30),
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.white,
+            ),
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            color: Colors.white,
+          ),
+          child: Row(
+            children: [
+              Expanded(
+                /*1*/
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    /*2*/
+                    Container(
+                      child: Text(
+                        'Home',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                    Text(
+                      '02102413844',
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment:
+                MainAxisAlignment.center, //Center Row contents horizontally,
+            crossAxisAlignment:
+                CrossAxisAlignment.center, //Center Row contents vertically,
+          ), //phone number
+        ),
 
         SizedBox(
           height: 14,
         ),
-        Row(
-          children: [
-            Text('Facetime'),
-            IconButton(
-                icon: Icon(Icons.video_call), onPressed: () => _buttonPressed),
-            IconButton(icon: Icon(Icons.call), onPressed: () => _buttonPressed),
-          ],
-          mainAxisAlignment:
-              MainAxisAlignment.center, //Center Row contents horizontally,
-          crossAxisAlignment:
-              CrossAxisAlignment.center, //Center Row contents vertically,
-        ), //facetime
+        Container(
+          padding: const EdgeInsets.only(left: 35, top: 10, bottom: 10),
+          margin: EdgeInsets.only(left: 30, right: 30),
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.white,
+            ),
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            color: Colors.white,
+          ),
+          child: Row(
+            children: [
+              Expanded(
+                /*1*/
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    /*2*/
+                    Container(
+                      child: Text(
+                        'Facetime',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                child: IconButton(
+                  icon: Icon(Icons.video_call),
+                  onPressed: () => _buttonPressed,
+                ),
+                decoration: BoxDecoration(
+                  color: Helper.colorFromHex('#efeff1'),
+                  // border: new Border.all(
+                  //     color: Colors.green,
+                  //     width: 5.0,
+                  //     style: BorderStyle.solid),
+                  // borderRadius: new BorderRadius.all(Radius.circular(20)),
+                  shape: BoxShape.circle,
+                  // boxShadow: [
+                  //   new BoxShadow(
+                  //     color: Colors.red,
+                  //     offset: new Offset(20.0, 10.0),
+                  //   )
+                  // ],
+                ),
+                margin: EdgeInsets.only(right: 10),
+              ),
+              Container(
+                child: IconButton(
+                    icon: Icon(Icons.call), onPressed: () => _buttonPressed),
+                decoration: BoxDecoration(
+                  color: Helper.colorFromHex('#efeff1'),
+                  // border: new Border.all(
+                  //     color: Colors.green,
+                  //     width: 5.0,
+                  //     style: BorderStyle.solid),
+                  // borderRadius: new BorderRadius.all(Radius.circular(20)),
+                  shape: BoxShape.circle,
+                  // boxShadow: [
+                  //   new BoxShadow(
+                  //     color: Colors.red,
+                  //     offset: new Offset(20.0, 10.0),
+                  //   )
+                  // ],
+                ),
+                margin: EdgeInsets.only(right: 10),
+              ),
+            ],
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment:
+                MainAxisAlignment.center, //Center Row contents horizontally,
+            crossAxisAlignment:
+                CrossAxisAlignment.center, //Center Row contents vertically,
+          ), //phone number
+        ),
         SizedBox(
           height: 14,
         ),
-        Row(
-          children: [Text('Home'), Text('zhuguangya98@gmail.com')],
-          mainAxisAlignment:
-              MainAxisAlignment.center, //Center Row contents horizontally,
-          crossAxisAlignment:
-              CrossAxisAlignment.center, //Center Row contents vertically,
-        ) //email
+        Container(
+          padding: const EdgeInsets.only(left: 35, top: 12, bottom: 12),
+          margin: EdgeInsets.only(left: 30, right: 30),
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.white,
+            ),
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            color: Colors.white,
+          ),
+          child: Row(
+            children: [
+              Expanded(
+                /*1*/
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    /*2*/
+                    Container(
+                      child: Text(
+                        'Home',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                    Text(
+                      'zhuguangya98@gmail.com',
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment:
+            MainAxisAlignment.center, //Center Row contents horizontally,
+            crossAxisAlignment:
+            CrossAxisAlignment.center, //Center Row contents vertically,
+          ), //phone number
+        ),
       ],
     );
   }
