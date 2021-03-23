@@ -27,12 +27,14 @@ class _ContactState extends State<Contact> {
   }
 
   void filterSearchResults(String query) {
+    print('query is: '+query);
     Map<String,Person> dummySearchMap = new Map();
     List<Person> dummyListData = [];
-    List<Person> duplicateItems = this._displayedContacts;
-    dummySearchMap = Map.fromIterable(this._displayedContacts, key: (v) => v.lastName, value: (v) => v);
+    List<Person> duplicateItems;
+    duplicateItems ??= this._displayedContacts;
+    dummySearchMap = Map.fromIterable(_db.contacts, key: (v) => v.lastName, value: (v) => v);
+    print(dummySearchMap);
     if(query.isNotEmpty) {
-
       dummySearchMap.keys.forEach((item) {
         if(item.contains(query)) {
           dummyListData.add(dummySearchMap[item]);
@@ -41,12 +43,14 @@ class _ContactState extends State<Contact> {
       setState(() {
         this._displayedContacts.clear();
         this._displayedContacts.addAll(dummyListData);
+        print(_displayedContacts);
+        dummyListData.clear();
       });
       return;
     } else {
       setState(() {
-        // this._displayedContacts.clear();
-        // this._displayedContacts.addAll(duplicateItems);
+        this._displayedContacts.clear();
+        this._displayedContacts.addAll(_db.contacts);
       });
     }
   }
@@ -55,7 +59,7 @@ class _ContactState extends State<Contact> {
     //real implementation should contain reading file from local document storage
     //this is a mock data implementation
     this._db = await Database.fromJson(Helper.json);
-    this._displayedContacts = this._db.contacts;
+    this._displayedContacts ??= this._db.contacts;
     return _db.contacts;
   }
 
@@ -79,10 +83,10 @@ class _ContactState extends State<Contact> {
         ),
         Expanded(
             child: ListView.separated(
-          itemCount: snapshot.data.length,
+          itemCount: _displayedContacts.length,
           itemBuilder: (BuildContext context, int index) {
-            String _firstName = snapshot.data[index].firstName;
-            String _lastName = snapshot.data[index].lastName;
+            String _firstName = _displayedContacts[index].firstName;
+            String _lastName = _displayedContacts[index].lastName;
             return Card(
                 child: ListTile(
               leading: Column(
@@ -99,7 +103,7 @@ class _ContactState extends State<Contact> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
               ),
-              title: Text('D'),
+              title: Text(''),
             ));
           },
           separatorBuilder: (BuildContext context, int index) {

@@ -5,8 +5,12 @@ class Helper {
     final hexCode = hexColor.replaceAll('#', '');
     return Color(int.parse('FF$hexCode', radix: 16));
   }
+  //for testing
+static const json = {'contacts':[{"id":1,"firstName":"Hobey","lastName":"Leyson","email":"hleyson0@sun.com","gender":"Genderqueer","phone":"593-961-2840","address":"6177 Morning Pass"},
+  {"id":2,"firstName":"Iain","lastName":"Smales","email":"ismales1@ebay.com","gender":"Genderqueer","phone":"979-591-5486","address":"30032 Lindbergh Street"},
+  {"id":3,"firstName":"Mallory","lastName":"Ouver","email":"mouver2@java.com","gender":"Female","phone":"225-964-3892","address":"33553 School Circle"}]};
 
-  static const json = {'contacts':[{"id":1,"firstName":"Hobey","lastName":"Leyson","email":"hleyson0@sun.com","gender":"Genderqueer","phone":"593-961-2840","address":"6177 Morning Pass"},
+  /*static const json = {'contacts':[{"id":1,"firstName":"Hobey","lastName":"Leyson","email":"hleyson0@sun.com","gender":"Genderqueer","phone":"593-961-2840","address":"6177 Morning Pass"},
     {"id":2,"firstName":"Iain","lastName":"Smales","email":"ismales1@ebay.com","gender":"Genderqueer","phone":"979-591-5486","address":"30032 Lindbergh Street"},
     {"id":3,"firstName":"Mallory","lastName":"Ouver","email":"mouver2@java.com","gender":"Female","phone":"225-964-3892","address":"33553 School Circle"},
     {"id":4,"firstName":"Betty","lastName":"Witham","email":"bwitham3@ehow.com","gender":"Female","phone":"152-280-7217","address":"879 Schlimgen Hill"},
@@ -205,5 +209,6 @@ class Helper {
     {"id":197,"firstName":"Jerrie","lastName":"Aberdein","email":"jaberdein5g@sakura.ne.jp","gender":"Male","phone":"735-972-3319","address":"744 Anthes Terrace"},
     {"id":198,"firstName":"Jareb","lastName":"Reignolds","email":"jreignolds5h@reddit.com","gender":"Non-binary","phone":"906-267-8791","address":"4 Summit Center"},
     {"id":199,"firstName":"Brandie","lastName":"Masey","email":"bmasey5i@tinypic.com","gender":"Polygender","phone":"797-753-6290","address":"25556 Jana Pass"},
-    {"id":200,"firstName":"Lanie","lastName":"Harses","email":"lharses5j@cnbc.com","gender":"Polygender","phone":"142-735-0219","address":"065 Lien Road"}]};
+    {"id":200,"firstName":"Lanie","lastName":"Harses","email":"lharses5j@cnbc.com","gender":"Polygender","phone":"142-735-0219","address":"065 Lien Road"},
+    {"id":201,"firstName":"Lanie","lastName":"0","email":"lharses5j@cnbc.com","gender":"Polygender","phone":"142-735-0219","address":"065 Lien Road"}]};*/
 }
